@@ -1,5 +1,3 @@
-package hora_de_codar;
-
 import java.util.Collections;
 
 public class Arena {
