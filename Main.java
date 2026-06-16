@@ -1,30 +1,45 @@
-package desafio;
+package hora_de_codar;
 
 public class Main {
+
     public static void main(String[] args) {
-        
-        // --- Instanciação e configuração do Primeiro Personagem ---
-        Personagem heroi1 = new Personagem();
-        heroi1.nome = "Arthemis";
-        heroi1.classe = "Arqueira";
-        heroi1.nivel = 5;
-        heroi1.pontosDeVida = 80;
-        heroi1.poderBase = 12.5;
 
-        // --- Instanciação e configuração do Segundo Personagem ---
-        Personagem heroi2 = new Personagem();
-        heroi2.nome = "Ragnar";
-        heroi2.classe = "Guerreiro";
-        heroi2.nivel = 8;
-        heroi2.pontosDeVida = 150;
-        heroi2.poderBase = 22.0;
+        Grupo grupoLuz = new Grupo();
+        Grupo grupoSombras = new Grupo();
 
-        // --- Exibição dos dados dos heróis no console ---
-        System.out.println("--- STATUS DOS PERSONAGENS ---");
-        System.out.println();
-        
-        heroi1.exibirStatus(); // Chama o método para a Arqueira
-        heroi2.exibirStatus(); // Chama o método para o Guerreiro
+        // Grupo Luz
+
+        grupoLuz.adicionarPersonagem(
+                new Personagem("Elenara", 10, 30));
+
+        grupoLuz.adicionarPersonagem(
+                new Personagem("Arthas", 8, 25));
+
+        grupoLuz.adicionarPersonagem(
+                new Personagem("Luna", 7, 20));
+
+        // Grupo Sombras
+
+        grupoSombras.adicionarPersonagem(
+                new Personagem("Drako", 9, 28));
+
+        grupoSombras.adicionarPersonagem(
+                new Personagem("Morgana", 11, 22));
+
+        grupoSombras.adicionarPersonagem(
+                new Personagem("Zarg", 6, 18));
+
+        System.out.println("GRUPO LUZ");
+        grupoLuz.listarPersonagens();
+
+        System.out.println("\nGRUPO SOMBRAS");
+        grupoSombras.listarPersonagens();
+
+        Arena arena = new Arena();
+
+        arena.batalharGrupos(
+                grupoLuz,
+                grupoSombras
+        );
     }
 }
-
